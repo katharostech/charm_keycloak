@@ -1,0 +1,36 @@
+# These are config values that users can set from the GUI or the commandline
+options:
+  KEYCLOAK_DOCKER_TAG:
+    type: string
+    default: latest
+    description: >
+      This charm pulls the Docker image for Keycloak from Quay.io. This
+      required setting sets the Tag to be used when deploying this charm. Any
+      valid tag which is defined in the registry for the following repo, can
+      be provided here. By default the 'latest' tag will be used.
+      Offical repo: https://quay.io/keycloak/keycloak
+  KEYCLOAK_USER:
+    type: string
+    default: admin
+    description: >
+      To create an admin account you need to provide an initial username and 
+      password. This required setting will create a user account with admin 
+      privileges, and is used in conjunction with the 'KEYCLOAK_PASSWORD' setting.
+  KEYCLOAK_PASSWORD:
+    type: string
+    default: admin
+    description: >
+      To create an admin account you need to provide an initial username and
+      password. This required setting will set the password for the user which
+      is identified by the 'KEYCLOAK_USER' setting.
+  KEYCLOAK_FRONTEND_URL:
+    type: string
+    default: ""
+    description: >
+      This option sets a fixed base URL for frontend requests (highly recommended
+      in production). If not provided the base URL is retrieved from the request.
+  PROXY_ADDRESS_FORWARDING:
+    type: boolean
+    default: "false"
+    description: >
+      Set this option if Keycloak is running behind a proxy.

@@ -1,0 +1,30 @@
+# Whether or not to install and use Docker. Optional. Defaults to `true`.
+# use-docker: true
+
+# This allows you to set what kind of script to run and in what order when juju
+# hooks are triggered. See https://discourse.jujucharms.com/t/charm-hooks/1040 for a list of the
+# Juju hooks and when they run.
+hooks:
+  install:
+    - host-script: install.sh
+  config-changed:
+    - host-script: configure.sh
+  upgrade-charm:
+    - host-script: install.sh
+    - host-script: configure.sh
+  db-relation-joined:
+    - host-script: pgsql_relations.sh
+  db-relation-changed:
+    - host-script: pgsql_relations.sh
+  db-relation-departed:
+    - host-script: pgsql_relations.sh
+  db-relation-broken:
+    - host-script: pgsql_relations.sh
+  website-relation-joined:
+    - host-script: website_relations.sh
+  website-relation-changed:
+    - host-script: website_relations.sh
+  website-relation-departed:
+    - host-script: website_relations.sh
+  website-relation-broken:
+    - host-script: website_relations.sh

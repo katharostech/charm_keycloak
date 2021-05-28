@@ -1,0 +1,19 @@
+name: keycloak
+display-name: Keycloak
+summary: A containerized Keycloak charm built in the Lucky Charming Framework.
+maintainer: Opax <opax@katharostech.com>
+description: |
+  A containerized Keycloak charm built in the Lucky Charming Framework.
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - identity
+series:
+  - focal
+provides:
+  website:
+    interface: http
+requires:
+  db:
+    interface: pgsql
+subordinate: false
