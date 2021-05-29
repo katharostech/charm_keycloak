@@ -2,13 +2,13 @@
 options:
   KEYCLOAK_DOCKER_TAG:
     type: string
-    default: latest
+    default: "latest"
     description: >
-      This charm pulls the Docker image for Keycloak from Quay.io. This
+      This charm pulls the Docker image for Keycloak from Docker Hub. This
       required setting sets the Tag to be used when deploying this charm. Any
-      valid tag which is defined in the registry for the following repo, can
-      be provided here. By default the 'latest' tag will be used.
-      Offical repo: https://quay.io/keycloak/keycloak
+      valid tag which is defined in Docker Hub in the official Keycloak repo,
+      can be provided here. By default the 'latest' tag will be used.
+      Official repo: https://hub.docker.com/r/jboss/keycloak
   KEYCLOAK_USER:
     type: string
     default: admin
