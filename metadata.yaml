@@ -15,5 +15,5 @@ provides:
     interface: http
 requires:
   db:
-    interface: pgsql
+    interface: ez-pgsql
 subordinate: false
